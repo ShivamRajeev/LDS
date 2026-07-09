@@ -1,0 +1,160 @@
+<svg width="620" height="200" viewBox="0 0 620 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LDS Light Design Solutions logo</title>
+  <desc id="desc">A compact animated logo with two green slashes, LDS lettering, and the Light Design Solutions tagline.</desc>
+  <defs>
+    <linearGradient id="accentGradient" x1="28" y1="28" x2="170" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D7E824" />
+      <stop offset="100%" stop-color="#9BB20E" />
+    </linearGradient>
+    <linearGradient id="cinematicGlow" x1="88" y1="44" x2="388" y2="146" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.0" />
+      <stop offset="45%" stop-color="#F7FF8D" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#D7E824" stop-opacity="0.0" />
+    </linearGradient>
+    <filter id="softShadow" x="0" y="0" width="620" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+    <filter id="glow" x="0" y="0" width="620" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#D7E824" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#FFFFFF" flood-opacity="0.08"/>
+    </filter>
+    <style>
+      .logo-mark {
+        transform-origin: 86px 100px;
+        animation: markReveal 900ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+      }
+
+      .slash-left,
+      .slash-right {
+        stroke-dasharray: 240;
+        stroke-dashoffset: 240;
+        animation: drawLine 900ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+      }
+
+      .slash-right {
+        animation-delay: 520ms;
+      }
+
+      .letter,
+      .tagline,
+      .underline,
+      .shine {
+        opacity: 0;
+      }
+
+      .letter {
+        transform-origin: center;
+        animation: letterReveal 620ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+      }
+
+      .letter-d {
+        animation-delay: 1420ms;
+      }
+
+      .letter-s {
+        animation-delay: 1680ms;
+      }
+
+      .letter-l {
+        animation-delay: 1160ms;
+      }
+
+      .tagline {
+        animation: textReveal 900ms cubic-bezier(0.2, 0.75, 0.2, 1) 2560ms both;
+      }
+
+      .underline {
+        stroke-dasharray: 180;
+        stroke-dashoffset: 180;
+        animation: drawLine 720ms cubic-bezier(0.2, 0.75, 0.2, 1) 2620ms both;
+      }
+
+      .shine {
+        animation: shinePass 1500ms ease-in-out 2360ms both;
+      }
+
+      .glow-core {
+        opacity: 0;
+        animation: glowPulse 1400ms ease-out 2280ms both;
+      }
+
+      .beam {
+        opacity: 0;
+        animation: beamSweep 1400ms ease-in-out 2320ms both;
+      }
+
+      @keyframes drawLine {
+        to { stroke-dashoffset: 0; }
+      }
+
+      @keyframes textReveal {
+        0% { opacity: 0; transform: translateY(8px) translateX(4px); filter: blur(5px); }
+        100% { opacity: 1; transform: translateY(0) translateX(0); filter: blur(0); }
+      }
+
+      @keyframes letterReveal {
+        0% { opacity: 0; transform: translateX(16px) scale(0.92); filter: blur(6px); }
+        65% { opacity: 1; transform: translateX(0) scale(1.02); filter: blur(0); }
+        100% { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+      }
+
+      @keyframes markReveal {
+        0% { opacity: 0; transform: translateX(-12px) scale(0.95); filter: blur(4px); }
+        100% { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+      }
+
+      @keyframes shinePass {
+        0% { opacity: 0; transform: translateX(-90px) skewX(-8deg); }
+        36% { opacity: 0.75; }
+        52% { opacity: 0.2; }
+        100% { opacity: 0; transform: translateX(220px); }
+      }
+
+      @keyframes glowPulse {
+        0% { opacity: 0; transform: scale(0.95); }
+        35% { opacity: 0.8; }
+        100% { opacity: 0.25; transform: scale(1); }
+      }
+
+      @keyframes beamSweep {
+        0% { opacity: 0; transform: translateX(-110px); }
+        42% { opacity: 0.9; }
+        70% { opacity: 0.18; }
+        100% { opacity: 0; transform: translateX(330px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .logo-mark,
+        .slash-left,
+        .slash-right,
+        .letter,
+        .tagline,
+        .underline,
+        .shine {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+          stroke-dashoffset: 0 !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <g class="logo-mark" filter="url(#glow)">
+      <ellipse class="glow-core" cx="245" cy="95" rx="165" ry="58" fill="url(#cinematicGlow)"/>
+      <path class="slash-left" d="M48 34L22 149" stroke="url(#accentGradient)" stroke-width="10" stroke-linecap="round"/>
+      <path class="slash-right" d="M94 34L68 149" stroke="url(#accentGradient)" stroke-width="10" stroke-linecap="round"/>
+
+      <path class="beam" d="M-10 78H410" stroke="#FFFFFF" stroke-opacity="0.32" stroke-width="12" stroke-linecap="round"/>
+
+      <text class="letter letter-l" x="124" y="108" fill="#F8F5EE" font-family="Cormorant Garamond, Georgia, serif" font-size="82" font-style="italic" font-weight="500">L</text>
+      <text class="letter letter-d" x="170" y="108" fill="#F8F5EE" font-family="Cormorant Garamond, Georgia, serif" font-size="82" font-style="italic" font-weight="500">D</text>
+      <text class="letter letter-s" x="226" y="108" fill="#F8F5EE" font-family="Cormorant Garamond, Georgia, serif" font-size="82" font-style="italic" font-weight="500">S</text>
+      <text class="tagline" x="124" y="136" fill="#D7E824" font-family="Manrope, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.3em">Light Design Solutions</text>
+      <path class="underline" d="M124 144H420" stroke="#D7E824" stroke-opacity="0.6" stroke-width="1.6" stroke-linecap="round"/>
+      <rect class="shine" x="112" y="42" width="14" height="104" rx="7" fill="#FFFFFF" fill-opacity="0.12"/>
+    </g>
+  </g>
+</svg>

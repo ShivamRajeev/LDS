@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LDS Cinematic Reveal</title>
+  <style>
+    :root {
+      --accent: #b6d11a;
+      --white: #f8f8f8;
+      --bg: #120f10;
+      --bg-soft: #21191a;
+      --glow: rgba(182, 209, 26, 0.8);
+      --dur: 10s;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: transparent;
+      color: var(--white);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .frame {
+      width: min(98vw, 1600px);
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      isolation: isolate;
+    }
+
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: -10%;
+      background: linear-gradient(115deg, transparent 45%, rgba(255, 255, 255, 0.08) 50%, transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      transform: translateX(-35%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      perspective: 1400px;
+    }
+
+    .camera {
+      position: absolute;
+      inset: 0;
+      transform-origin: center;
+    }
+
+    .overlay-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .overlay-particles .dot {
+      position: absolute;
+      width: var(--s);
+      height: var(--s);
+      left: var(--x);
+      top: var(--y);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(182, 209, 26, 0.35));
+      filter: blur(0.2px);
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .floor-reflect {
+      opacity: 0.12;
+      filter: blur(8px);
+    }
+
+    .worker,
+    .worker * {
+      stroke: var(--accent);
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .worker {
+      opacity: 0;
+      filter: drop-shadow(0 0 11px rgba(182, 209, 26, 0.66));
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .worker .head {
+      fill: rgba(182, 209, 26, 0.16);
+      stroke-width: 5;
+    }
+
+    .worker .body,
+    .worker .arm,
+    .worker .leg {
+      stroke-width: 5;
+    }
+
+    .worker .bar {
+      stroke-width: 10;
+      filter: drop-shadow(0 0 9px rgba(182, 209, 26, 1));
+    }
+
+    .slash {
+      stroke: var(--accent);
+      stroke-width: 18;
+      stroke-linecap: round;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      opacity: 0;
+      filter: drop-shadow(0 0 4px rgba(182, 209, 26, 0.45));
+    }
+
+    .spark {
+      opacity: 0;
+      fill: rgba(255, 255, 255, 0.95);
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.95));
+    }
+
+    .lds {
+      fill: var(--white);
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+
+    .subtitle {
+      fill: var(--accent);
+      opacity: 0;
+      letter-spacing: 0.03em;
+      filter: drop-shadow(0 0 8px rgba(182, 209, 26, 0.35));
+    }
+
+    .plug-runner {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      filter: drop-shadow(0 0 10px rgba(182, 209, 26, 0.7));
+    }
+
+    .plug,
+    .plug * {
+      stroke: var(--accent);
+      fill: none;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .plug .tip {
+      stroke-width: 8;
+    }
+
+    .plug .body {
+      stroke-width: 7;
+      fill: rgba(182, 209, 26, 0.12);
+    }
+
+    .plug .cable {
+      stroke-width: 4;
+      opacity: 0.45;
+    }
+
+    .pulse {
+      opacity: 0;
+      stroke: #efff9f;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+      filter: drop-shadow(0 0 14px rgba(231, 255, 120, 0.95));
+    }
+
+    .edge-energy {
+      opacity: 0;
+      stroke: rgba(255, 255, 255, 0.9);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.7));
+    }
+
+    .final-glow {
+      opacity: 0;
+      fill: url(#logoGlow);
+      filter: blur(1.2px);
+    }
+
+    .logo-core {
+      isolation: isolate;
+    }
+
+    .controls {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 6;
+      display: flex;
+      gap: 8px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .btn {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(0, 0, 0, 0.46);
+      color: #f7f7f7;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border-color: rgba(182, 209, 26, 0.7);
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(182, 209, 26, 0.25);
+    }
+
+    .play .camera {
+      animation: cameraMove var(--dur) ease forwards;
+    }
+
+    .play .worker.one {
+      animation: workerOneMove var(--dur) linear forwards;
+    }
+
+    .play .worker.two {
+      animation: workerTwoMove var(--dur) linear forwards;
+    }
+
+    .play .worker .arm.left {
+      animation: armSwing var(--dur) ease-in-out forwards;
+    }
+
+    .play .worker .leg.left {
+      animation: legSwing var(--dur) ease-in-out forwards;
+    }
+
+    .play .worker .arm.right {
+      animation: armSwingAlt var(--dur) ease-in-out forwards;
+    }
+
+    .play .worker .leg.right {
+      animation: legSwingAlt var(--dur) ease-in-out forwards;
+    }
+
+    .play .slash.one {
+      animation: slashOne var(--dur) ease forwards;
+    }
+
+    .play .slash.two {
+      animation: slashTwo var(--dur) ease forwards;
+    }
+
+    .play .spark.one {
+      animation: sparkFlash var(--dur) ease-out forwards;
+    }
+
+    .play .spark.two {
+      animation: sparkFlashTwo var(--dur) ease-out forwards;
+    }
+
+    .play .lds {
+      animation: ldsReveal var(--dur) cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+
+    .play .subtitle {
+      animation: subtitleReveal var(--dur) ease forwards;
+    }
+
+    .play .plug-runner {
+      animation: plugMove var(--dur) ease-in-out forwards;
+    }
+
+    .play .pulse {
+      animation: pulseTravel var(--dur) ease forwards;
+    }
+
+    .play .edge-energy {
+      animation: edgeSweep var(--dur) ease forwards;
+    }
+
+    .play .final-glow {
+      animation: finalGlow var(--dur) ease forwards;
+    }
+
+    .play .frame::before {
+      animation: sceneSweep var(--dur) ease forwards;
+    }
+
+    .play .overlay-particles .dot {
+      animation: particleFlow var(--dur) linear forwards;
+      animation-delay: var(--d);
+    }
+
+    @keyframes workerOneMove {
+      0% { opacity: 0; transform: translate(-820px, 430px); }
+      8% { opacity: 1; transform: translate(-380px, 430px); }
+      18% { opacity: 1; transform: translate(-148px, 432px); }
+      26% { opacity: 1; transform: translate(-136px, 432px); }
+      34% { opacity: 1; transform: translate(-215px, 450px); }
+      100% { opacity: 0.78; transform: translate(-215px, 450px); }
+    }
+
+    @keyframes workerTwoMove {
+      0% { opacity: 0; transform: translate(-860px, 470px); }
+      14% { opacity: 0; transform: translate(-860px, 470px); }
+      23% { opacity: 1; transform: translate(-340px, 470px); }
+      31% { opacity: 1; transform: translate(-74px, 470px); }
+      40% { opacity: 1; transform: translate(-152px, 490px); }
+      100% { opacity: 0.78; transform: translate(-152px, 490px); }
+    }
+
+    @keyframes armSwing {
+      0%, 18%, 30%, 100% { transform: rotate(0deg); }
+      6%, 12%, 24% { transform: rotate(-13deg); }
+    }
+
+    @keyframes armSwingAlt {
+      0%, 18%, 30%, 100% { transform: rotate(0deg); }
+      6%, 12%, 24% { transform: rotate(12deg); }
+    }
+
+    @keyframes legSwing {
+      0%, 18%, 30%, 100% { transform: rotate(0deg); }
+      6%, 12%, 24% { transform: rotate(10deg); }
+    }
+
+    @keyframes legSwingAlt {
+      0%, 18%, 30%, 100% { transform: rotate(0deg); }
+      6%, 12%, 24% { transform: rotate(-10deg); }
+    }
+
+    @keyframes slashOne {
+      0%, 23% { opacity: 0; stroke-dashoffset: 300; }
+      24% { opacity: 1; }
+      33% { opacity: 1; stroke-dashoffset: 0; }
+      100% { opacity: 1; stroke-dashoffset: 0; filter: drop-shadow(0 0 22px var(--glow)); }
+    }
+
+    @keyframes slashTwo {
+      0%, 30% { opacity: 0; stroke-dashoffset: 300; }
+      31% { opacity: 1; }
+      40% { opacity: 1; stroke-dashoffset: 0; }
+      100% { opacity: 1; stroke-dashoffset: 0; filter: drop-shadow(0 0 22px var(--glow)); }
+    }
+
+    @keyframes sparkFlash {
+      0%, 24.2% { opacity: 0; transform: scale(0.2); }
+      25.1% { opacity: 1; transform: scale(1.5); }
+      27% { opacity: 0; transform: scale(0.2); }
+      100% { opacity: 0; }
+    }
+
+    @keyframes sparkFlashTwo {
+      0%, 31.2% { opacity: 0; transform: scale(0.2); }
+      32.1% { opacity: 1; transform: scale(1.5); }
+      34% { opacity: 0; transform: scale(0.2); }
+      100% { opacity: 0; }
+    }
+
+    @keyframes ldsReveal {
+      0%, 42% { opacity: 0; transform: scale(0.96) translateY(8px); filter: blur(7px) drop-shadow(0 0 0 rgba(255, 255, 255, 0)); }
+      58% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.45)); }
+      72% { opacity: 1; }
+      100% { opacity: 1; filter: blur(0) drop-shadow(0 0 24px rgba(255, 255, 255, 0.95)); }
+    }
+
+    @keyframes subtitleReveal {
+      0%, 56% { opacity: 0; transform: translateY(10px); }
+      66% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0.96; }
+    }
+
+    @keyframes plugMove {
+      0%, 59% { opacity: 0; transform: translate(690px, 506px); }
+      66% { opacity: 1; transform: translate(535px, 506px); }
+      72% { opacity: 1; transform: translate(410px, 456px); }
+      100% { opacity: 0.85; transform: translate(410px, 456px); }
+    }
+
+    @keyframes pulseTravel {
+      0%, 71% { opacity: 0; stroke-dashoffset: 900; }
+      72% { opacity: 1; }
+      81% { opacity: 1; stroke-dashoffset: 0; }
+      100% { opacity: 0.7; stroke-dashoffset: 0; }
+    }
+
+    @keyframes edgeSweep {
+      0%, 79% { opacity: 0; stroke-dashoffset: 1200; }
+      80% { opacity: 1; }
+      88% { opacity: 1; stroke-dashoffset: 0; }
+      100% { opacity: 0.52; stroke-dashoffset: 0; }
+    }
+
+    @keyframes finalGlow {
+      0%, 76% { opacity: 0; }
+      84% { opacity: 1; }
+      100% { opacity: 0.92; }
+    }
+
+    @keyframes sceneSweep {
+      0%, 77% { opacity: 0; transform: translateX(-35%); }
+      90% { opacity: 0.9; transform: translateX(35%); }
+      100% { opacity: 0; transform: translateX(35%); }
+    }
+
+    @keyframes cameraMove {
+      0% { transform: scale(1.07) translateY(6px); }
+      32% { transform: scale(1.02) translateY(0); }
+      72% { transform: scale(1) translateY(0); }
+      84% { transform: scale(1.03) translateY(-2px); }
+      100% { transform: scale(1.02) translateY(-1px); }
+    }
+
+    @keyframes particleFlow {
+      0%, 40% { opacity: 0; transform: translate3d(var(--sx), var(--sy), 0) scale(0.5); }
+      56% { opacity: 0.9; transform: translate3d(var(--tx), var(--ty), 0) scale(1); }
+      72% { opacity: 0.4; }
+      100% { opacity: 0.2; transform: translate3d(calc(var(--tx) * 1.08), calc(var(--ty) * 1.03), 0) scale(0.8); }
+    }
+
+    @media (max-width: 960px) {
+      .frame {
+        width: 100vw;
+        border-radius: 0;
+      }
+
+      .controls {
+        top: auto;
+        bottom: 8px;
+        right: 8px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .play * {
+        animation: none !important;
+      }
+
+      .worker,
+      .slash,
+      .lds,
+      .subtitle,
+      .plug-runner,
+      .pulse,
+      .edge-energy,
+      .final-glow,
+      .overlay-particles .dot {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="frame" aria-label="LDS cinematic logo reveal scene">
+    <div class="controls">
+      <button id="replaySilent" class="btn" type="button">Replay</button>
+      <button id="replaySound" class="btn" type="button">Replay + SFX</button>
+    </div>
+
+    <div id="stage" class="stage play">
+      <div id="particles" class="overlay-particles" aria-hidden="true"></div>
+      <div class="camera">
+        <svg viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+          <title id="title">LDS Light Design Solutions Logo Reveal</title>
+          <desc id="desc">Two light workers place the slashes before LDS appears, then a plug powers the logo with a cinematic glow.</desc>
+
+          <defs>
+            <radialGradient id="logoGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="rgba(237,255,159,0.95)" />
+              <stop offset="45%" stop-color="rgba(182,209,26,0.35)" />
+              <stop offset="100%" stop-color="rgba(182,209,26,0)" />
+            </radialGradient>
+          </defs>
+
+          <g class="floor-reflect" transform="translate(730 730) scale(1.06, 0.35)">
+            <ellipse cx="350" cy="70" rx="420" ry="140" fill="rgba(182,209,26,0.2)" />
+          </g>
+
+          <g class="worker one">
+            <circle class="head" cx="0" cy="-55" r="16" />
+            <line class="body" x1="0" y1="-39" x2="0" y2="22" />
+            <line class="arm left" x1="0" y1="-12" x2="-26" y2="8" />
+            <line class="arm right" x1="0" y1="-12" x2="24" y2="8" />
+            <line class="leg left" x1="0" y1="22" x2="-17" y2="57" />
+            <line class="leg right" x1="0" y1="22" x2="16" y2="57" />
+            <line class="bar" x1="24" y1="8" x2="70" y2="-35" />
+          </g>
+
+          <g class="worker two">
+            <circle class="head" cx="0" cy="-55" r="16" />
+            <line class="body" x1="0" y1="-39" x2="0" y2="22" />
+            <line class="arm left" x1="0" y1="-12" x2="-27" y2="10" />
+            <line class="arm right" x1="0" y1="-12" x2="22" y2="10" />
+            <line class="leg left" x1="0" y1="22" x2="-15" y2="58" />
+            <line class="leg right" x1="0" y1="22" x2="17" y2="58" />
+            <line class="bar" x1="-26" y1="12" x2="-72" y2="-30" />
+          </g>
+
+          <g class="logo-core" transform="translate(760 360)">
+            <ellipse class="final-glow" cx="350" cy="160" rx="420" ry="230" />
+
+            <line class="slash one" x1="0" y1="26" x2="56" y2="326" />
+            <line class="slash two" x1="86" y1="26" x2="140" y2="326" />
+
+            <circle class="spark one" cx="28" cy="34" r="12" />
+            <circle class="spark two" cx="114" cy="34" r="12" />
+
+            <path class="edge-energy" d="M -20 8 Q 350 -26 750 8 M -20 340 Q 350 374 750 340" />
+
+            <text class="lds" x="194" y="285" font-size="268" font-style="italic" font-weight="420" font-family="Segoe UI, Arial, sans-serif">LDS</text>
+            <text class="subtitle" x="4" y="392" font-size="56" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Light Design Solutions</text>
+          </g>
+
+          <g class="plug-runner">
+            <g class="plug">
+              <path class="cable" d="M 1570 540 C 1470 560, 1340 560, 1220 486" />
+              <rect class="body" x="1530" y="510" width="62" height="36" rx="8" />
+              <line class="tip" x1="1528" y1="519" x2="1510" y2="519" />
+              <line class="tip" x1="1528" y1="536" x2="1510" y2="536" />
+            </g>
+          </g>
+
+          <path class="pulse" d="M 1510 528 C 1400 548, 1300 548, 1220 486 C 1148 430, 1055 405, 930 390 C 868 384, 821 379, 792 373" />
+        </svg>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const stage = document.getElementById("stage");
+    const particlesLayer = document.getElementById("particles");
+    const replaySilent = document.getElementById("replaySilent");
+    const replaySound = document.getElementById("replaySound");
+
+    let audioContext;
+
+    function resetAndPlay(withSound) {
+      stage.classList.remove("play");
+      void stage.offsetWidth;
+      stage.classList.add("play");
+      if (withSound) {
+        playSoundTrack();
+      }
+    }
+
+    function makeParticles() {
+      const count = 78;
+      particlesLayer.innerHTML = "";
+      for (let i = 0; i < count; i += 1) {
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        const x = 44 + Math.random() * 24;
+        const y = 31 + Math.random() * 18;
+        const sx = -180 + Math.random() * 360;
+        const sy = -160 + Math.random() * 320;
+        const tx = -36 + Math.random() * 72;
+        const ty = -30 + Math.random() * 60;
+        const size = 1 + Math.random() * 3.5;
+        const delay = `${(3.8 + Math.random() * 1.2).toFixed(2)}s`;
+
+        dot.style.setProperty("--x", `${x}%`);
+        dot.style.setProperty("--y", `${y}%`);
+        dot.style.setProperty("--sx", `${sx}px`);
+        dot.style.setProperty("--sy", `${sy}px`);
+        dot.style.setProperty("--tx", `${tx}px`);
+        dot.style.setProperty("--ty", `${ty}px`);
+        dot.style.setProperty("--s", `${size.toFixed(2)}px`);
+        dot.style.setProperty("--d", delay);
+
+        particlesLayer.appendChild(dot);
+      }
+    }
+
+    function ensureAudioContext() {
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioContext.state === "suspended") {
+        audioContext.resume();
+      }
+      return audioContext;
+    }
+
+    function tone(ctx, start, frequency, duration, type, gainPeak) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(frequency, start);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(gainPeak, start + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start + duration + 0.02);
+    }
+
+    function noiseBurst(ctx, start, duration, gainPeak) {
+      const buffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * duration), ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < data.length; i += 1) {
+        data[i] = (Math.random() * 2 - 1) * (1 - i / data.length);
+      }
+      const source = ctx.createBufferSource();
+      const band = ctx.createBiquadFilter();
+      band.type = "bandpass";
+      band.frequency.setValueAtTime(2200, start);
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(gainPeak, start + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+      source.buffer = buffer;
+      source.connect(band).connect(gain).connect(ctx.destination);
+      source.start(start);
+      source.stop(start + duration + 0.02);
+    }
+
+    function playSoundTrack() {
+      const ctx = ensureAudioContext();
+      const t0 = ctx.currentTime + 0.05;
+
+      const footTimes = [0.62, 0.9, 1.18, 1.46, 1.96, 2.24, 2.52, 2.82, 3.1, 3.34];
+      footTimes.forEach((t, idx) => {
+        tone(ctx, t0 + t, 120 + idx * 5, 0.08, "triangle", 0.05);
+      });
+
+      tone(ctx, t0 + 2.45, 620, 0.08, "square", 0.08);
+      tone(ctx, t0 + 3.22, 640, 0.08, "square", 0.08);
+
+      noiseBurst(ctx, t0 + 2.44, 0.14, 0.09);
+      noiseBurst(ctx, t0 + 3.2, 0.14, 0.09);
+
+      tone(ctx, t0 + 4.18, 240, 0.9, "sawtooth", 0.03);
+      tone(ctx, t0 + 5.6, 180, 0.4, "sine", 0.02);
+
+      tone(ctx, t0 + 7.12, 90, 1.4, "sawtooth", 0.035);
+      tone(ctx, t0 + 7.24, 760, 0.22, "triangle", 0.12);
+      noiseBurst(ctx, t0 + 7.23, 0.22, 0.1);
+
+      tone(ctx, t0 + 8.02, 350, 1.3, "sine", 0.035);
+      tone(ctx, t0 + 8.06, 701, 0.8, "triangle", 0.022);
+    }
+
+    replaySilent.addEventListener("click", () => {
+      resetAndPlay(false);
+    });
+
+    replaySound.addEventListener("click", () => {
+      resetAndPlay(true);
+    });
+
+    makeParticles();
+    resetAndPlay(false);
+  </script>
+</body>
+</html>
