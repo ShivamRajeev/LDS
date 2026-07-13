@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, priority = false }) => {
   return (
     <motion.article
       whileHover={{ y: -6 }}
@@ -11,8 +11,11 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={`${product.name} placeholder`}
-          loading="lazy"
-          className="h-52 w-full object-cover transition duration-700 group-hover:scale-105"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          decoding="async"
+          sizes="(min-width: 1280px) 22vw, (min-width: 640px) 44vw, 92vw"
+          className="h-52 w-full bg-brand-black/35 object-contain p-2 transition duration-500 group-hover:scale-[1.02]"
         />
         <span className="absolute left-4 top-4 rounded-full border border-brand-gold/40 bg-brand-black/70 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-brand-gold">
           {product.category}

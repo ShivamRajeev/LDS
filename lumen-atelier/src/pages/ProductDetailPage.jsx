@@ -35,7 +35,10 @@ const ProductDetailPage = () => {
             <img
               src={product.image}
               alt={`${product.name} product visual placeholder`}
-              className="h-[420px] w-full rounded-2xl border border-brand-ivory/10 object-cover"
+              loading="eager"
+              decoding="async"
+              sizes="(min-width: 1024px) 45vw, 94vw"
+              className="aspect-[4/3] w-full rounded-2xl border border-brand-ivory/10 bg-brand-charcoal/70 object-contain p-4"
             />
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-brand-gold">{product.category}</p>
