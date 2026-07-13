@@ -46,7 +46,7 @@ const ProductsPage = () => {
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1} className="mt-10 flex flex-wrap gap-3">
+        <AnimatedSection className="mt-10 flex flex-wrap gap-3" animateOnScroll={false}>
           <button
             type="button"
             onClick={() => setSelectedCategory("All")}
@@ -75,7 +75,7 @@ const ProductsPage = () => {
         </AnimatedSection>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[290px_1fr]">
-          <AnimatedSection delay={0.15}>
+          <AnimatedSection animateOnScroll={false}>
             <FilterSidebar
               filters={filterOptions}
               selectedFilters={selectedFilters}
@@ -83,11 +83,11 @@ const ProductsPage = () => {
             />
           </AnimatedSection>
 
-          <AnimatedSection delay={0.2}>
+          <AnimatedSection animateOnScroll={false}>
             {filteredProducts.length > 0 ? (
               <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                {filteredProducts.map((product, index) => (
+                  <ProductCard key={product.id} product={product} priority={index < 6} />
                 ))}
               </div>
             ) : (
