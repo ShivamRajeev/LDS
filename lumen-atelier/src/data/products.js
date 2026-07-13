@@ -34,7 +34,7 @@ import productImage31 from "../assets/placeholders/Product/Led_Ceiling_Light.png
 import productImage32 from "../assets/placeholders/Product/Occupancy_Sensor_Light.png"
 import productImage33 from "../assets/placeholders/Product/Switches.png"
 import productImage34 from "../assets/placeholders/Product/Highbay_.png"
-import productImage35 from "../assets/placeholders/Product/2_Phase_track_patti.png"
+import productImage35 from "../assets/placeholders/Product/2_Phase_Track_Patti.png"
 import productImage36 from "../assets/placeholders/Product/3_Phase_Track_Patti.png"
 import productImage37 from "../assets/placeholders/Product/Octagonal_Pole.png"
 import productImage38 from "../assets/placeholders/Product/Tubular_Pole.png"
