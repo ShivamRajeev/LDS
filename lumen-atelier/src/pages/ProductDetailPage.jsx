@@ -3,9 +3,44 @@ import Seo from "../components/Seo";
 import AnimatedSection from "../components/AnimatedSection";
 import { productMap } from "../data/products";
 
+const EXTERNAL_URL_PATTERN = /^(https?:)?\/\//i;
+
+const resolveDatasheetUrl = (href) => {
+  if (!href || EXTERNAL_URL_PATTERN.test(href) || href.startsWith("data:") || href.startsWith("blob:")) {
+    return href;
+  }
+
+  if (href.startsWith("/")) {
+    return `${import.meta.env.BASE_URL}${href.slice(1)}`;
+  }
+
+  return href;
+};
+
 const ProductDetailPage = () => {
   const { slug } = useParams();
   const product = productMap[slug];
+  const datasheetEntries = Array.isArray(product?.datasheets) && product.datasheets.length > 0
+    ? product.datasheets
+    : [product?.datasheet];
+  const datasheets = datasheetEntries
+    .filter(Boolean)
+    .map((entry, index) => {
+      if (typeof entry === "string") {
+        return {
+          href: resolveDatasheetUrl(entry),
+          label: index === 0 ? "Download Datasheet" : `Download Datasheet ${index + 1}`,
+          fileName: undefined,
+        };
+      }
+
+      return {
+        href: resolveDatasheetUrl(entry.url),
+        label: entry.label || "Download Datasheet",
+        fileName: entry.fileName,
+      };
+    })
+    .filter((entry) => entry.href);
 
   if (!product) {
     return (
@@ -53,12 +88,16 @@ const ProductDetailPage = () => {
               </ul>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <button
-                  type="button"
-                  className="rounded-full border border-brand-gold bg-brand-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-black"
-                >
-                  Download Datasheet
-                </button>
+                {datasheets.map((sheet) => (
+                  <a
+                    key={`${sheet.href}-${sheet.label}`}
+                    href={sheet.href}
+                    download={sheet.fileName || ""}
+                    className="rounded-full border border-brand-gold bg-brand-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-black"
+                  >
+                    {sheet.label}
+                  </a>
+                ))}
                 <Link
                   to="/contact"
                   className="rounded-full border border-brand-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-brand-gold"
