@@ -16,7 +16,7 @@ const ProjectsPage = () => {
   return (
     <>
       <Seo
-        title="Light Design Solutions"
+        title="Projects | LDS"
         description="Discover architectural lighting case studies across hospitality, retail, residential, facade, and heritage projects."
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">

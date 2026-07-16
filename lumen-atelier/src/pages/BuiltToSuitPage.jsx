@@ -42,7 +42,7 @@ const BuiltToSuitPage = () => {
   return (
     <>
       <Seo
-        title="Built-to-Suit | Lumen Atelier"
+        title="Built-to-Suit | LDS"
         description="Custom architectural lighting solutions from concept and prototyping to manufacturing and installation support."
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">

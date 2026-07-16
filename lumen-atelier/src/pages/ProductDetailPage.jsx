@@ -1,7 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import Seo from "../components/Seo";
 import AnimatedSection from "../components/AnimatedSection";
-import { productMap } from "../data/products";
+import {
+  getCategorySlug,
+  getSubcategoryName,
+  getSubcategorySlug,
+  productMap,
+} from "../data/products";
 
 const EXTERNAL_URL_PATTERN = /^(https?:)?\/\//i;
 
@@ -20,6 +25,8 @@ const resolveDatasheetUrl = (href) => {
 const ProductDetailPage = () => {
   const { slug } = useParams();
   const product = productMap[slug];
+  const categorySlug = getCategorySlug(product?.category || "");
+  const subcategorySlug = getSubcategorySlug(getSubcategoryName(product || {}));
   const datasheetEntries = Array.isArray(product?.datasheets) && product.datasheets.length > 0
     ? product.datasheets
     : [product?.datasheet];
@@ -61,11 +68,30 @@ const ProductDetailPage = () => {
   return (
     <>
       <Seo
-        title={`${product.name} | Lumen Atelier`}
+        title={`${product.name} | LDS`}
         description={product.description}
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">
         <AnimatedSection>
+          <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.14em] text-brand-ivory/65">
+            <Link to="/" className="transition hover:text-brand-gold">Home</Link>
+            <span>/</span>
+            <Link to="/products" className="transition hover:text-brand-gold">Products</Link>
+            <span>/</span>
+            <Link to={`/products/category/${categorySlug}`} className="transition hover:text-brand-gold">
+              {product.category}
+            </Link>
+            <span>/</span>
+            <Link
+              to={`/products/category/${categorySlug}/subcategory/${subcategorySlug}`}
+              className="transition hover:text-brand-gold"
+            >
+              {getSubcategoryName(product)}
+            </Link>
+            <span>/</span>
+            <span className="text-brand-cream">{product.name}</span>
+          </nav>
+
           <div className="grid gap-10 lg:grid-cols-2">
             <img
               src={product.image}

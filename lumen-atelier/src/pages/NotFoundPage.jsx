@@ -5,7 +5,7 @@ const NotFoundPage = () => {
   return (
     <>
       <Seo
-        title="Page Not Found | Lumen Atelier"
+        title="Page Not Found | LDS"
         description="The page you are looking for does not exist."
       />
       <section className="mx-auto flex min-h-[60vh] w-full max-w-4xl items-center justify-center px-6 pt-32 text-center">

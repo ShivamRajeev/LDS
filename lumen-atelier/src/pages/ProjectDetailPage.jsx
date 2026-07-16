@@ -27,7 +27,7 @@ const ProjectDetailPage = () => {
   return (
     <>
       <Seo
-        title={`${project.title} | Lumen Atelier`}
+        title={`${project.title} | LDS`}
         description={project.shortDescription}
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">

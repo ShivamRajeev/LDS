@@ -13,7 +13,7 @@ const ResourcesPage = () => {
   return (
     <>
       <Seo
-        title="Resources | Lumen Atelier"
+        title="Resources | LDS"
         description="Access lighting catalogs, datasheets, installation guides, glossary terms, and frequently asked questions."
       />
       <section className="mx-auto w-full max-w-7xl space-y-14 px-6 pb-20 pt-32 sm:px-8 lg:px-10">
