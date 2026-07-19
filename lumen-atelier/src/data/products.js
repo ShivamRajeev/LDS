@@ -1,6 +1,14 @@
-import productImage from "../assets/placeholders/Product/Cob_light.png";
-import productImage1 from "../assets/placeholders/Product/Panel_light.png";
+import productImg1 from "../assets/placeholders/Product/Bollard/Bollard_Image.png"
+import productImg2 from "../assets/placeholders/Product/Bollard/Bollard_light.png"
+import productImg3 from "../assets/placeholders/Product/Bollard/Bollard_1.png"
+import productImg4 from "../assets/placeholders/Product/Bollard/Bollard_2.png"
+import productImg5 from "../assets/placeholders/Product/Bollard/Bollard_3.png"
+import productImg6 from "../assets/placeholders/Product/Bollard/Bollard_4.png"
+import productImg7 from "../assets/placeholders/Product/Bollard/Bollard_5.png"
+
+
 import productImage2 from "../assets/placeholders/Product/Cob_light.png";
+import productImage1 from "../assets/placeholders/Product/Panel_light.png";
 import productImage3 from "../assets/placeholders/Product/Track_light.png";
 import productImage4 from "../assets/placeholders/Product/Linear_light.png";
 import productImage5 from "../assets/placeholders/Product/Cabinate_light.png";
@@ -10,7 +18,6 @@ import productImage8 from "../assets/placeholders/Product/LED_light.png"
 import productImage9 from "../assets/placeholders/Product/Wall_light.png"
 import productImage10 from "../assets/placeholders/Product/Inground_light.png"
 import productImage11 from "../assets/placeholders/Product/Spike_light.png"
-import productImage12 from "../assets/placeholders/Product/Bollard_light.png"
 import productImage13 from "../assets/placeholders/Product/Street_light.png"
 import productImage14 from "../assets/placeholders/Product/Flood_light.png"
 import productImage15 from "../assets/placeholders/Product/Underwater_light.png"
@@ -51,22 +58,13 @@ import productImage42 from "../assets/placeholders/Product/High_Mast_Light_Pole.
 
 
 export const productCategories = [
-  "Linear Lights",
-  "Track Lights",
-  "Recessed Lights",
-  "Decorative Lights",
-  "Facade Lighting",
   "Outdoor Lighting",
-  "Custom Lighting",
-  "Panel Lights",
+  "Indoor Lighting",
+  "Aluminum Profile Lighting",
+  "Strip / Neon Lighting / String Light",
+  "Transformers / Drivers",
+  "Lighting Controllers",
 ];
-
-export const filterOptions = {
-  application: ["Indoor", "Outdoor"],
-  mounting: ["Surface", "Recessed", "Suspended", "Track"],
-  colorTone: ["Warm White", "Neutral White", "Tunable White"],
-  sector: ["Residential", "Hospitality", "Retail", "Commercial"],
-};
 
 export const finderOptions = {
   application: ["Indoor", "Outdoor", "Facade", "Retail", "Hospitality"],
@@ -75,11 +73,16 @@ export const finderOptions = {
   colorTemperature: ["2700K", "3000K", "4000K", "Tunable"],
 };
 
-export const products = [
+const productCatalog = [
   {
     id: "bollard-light1",
     slug: "bollard-light1",
-    name: "Bollard Light",
+    name: "10W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
     category: "Outdoor Lighting",
     description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
     shortDescription: "Bollard lights are commonly used to illuminate walkways",
@@ -109,12 +112,219 @@ export const products = [
       material: "Extruded aluminum pole material",
     },
     datasheet: "/datasheets/Bollard_Light_Datasheet.pdf",
-    image: productImage12,
+    image: productImg2,
   },
+  {
+    id: "bollard-light2",
+    slug: "bollard-light2",
+    name: "11W LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "11W LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Panel",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "SMD, CREE",
+      "80lm/Watt warm white output",
+      "220-240V AC, 50-60Hz power supply",
+      "Diffused 360° beam angle",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Tempered glass diffuser"
+    ],
+    specifications: {
+      wattage: "11W",
+      beamAngle: "360°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg3,
+  },
+{
+    id: "bollard-light3",
+    slug: "bollard-light3",
+    name: "7W L-SHAPED LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "7W L-SHAPED LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "80lm/Watt warm white output",
+      "190-240V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Tempered glass diffuser"
+    ],
+    specifications: {
+      wattage: "7W",
+      beamAngle: "Asymmetric",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg4,
+  },
+  {
+    id: "bollard-light4",
+    slug: "bollard-light4",
+    name: "10W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "10W OUTDOOR LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "70lm/Watt warm white output",
+      "190-240V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Tempered glass diffuser"
+    ],
+    specifications: {
+      wattage: "7W",
+      beamAngle: "Asymmetric 130°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg5,
+  },
+  {
+    id: "bollard-light5",
+    slug: "bollard-light5",
+    name: "15W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "15W OUTDOOR LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "1200lm warm white output",
+      "190-240V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Opal acrylic diffuser"
+    ],
+    specifications: {
+      wattage: "15W",
+      beamAngle: "Diffused (360°) beam angle",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg6,
+  },
+    {
+    id: "bollard-light5",
+    slug: "bollard-light5",
+    name: "5W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "5W OUTDOOR LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "90lm warm white output",
+      "100-260V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Frosted acrylic diffuser"
+    ],
+    specifications: {
+      wattage: "5W",
+      beamAngle: "Diffused (360°) beam angle",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg7,
+  },
+
    {
     id: "panel-light1",
     slug: "panel-light1",
     name: "Panel Light",
+    placement: {
+      category: "Indoor Lighting",
+      subcategory: "Panel",
+      superSubcategory: "Panel Light",
+    },
     category: "Panel Lights",
     description: "These new recessed ceiling luminaires ready for connection offer a cost-effective complete solution for efficient illumination in the private sector and anywhere a quick and simple lighting solution needs to be created with top-quality recessed ceiling luminaires. Suitable for hotels, conference rooms,factories, offices, commercial purposes, institution buildings, schools, colleges,universities, hospitals and other places which needs energy saving and high color rendering index lighting.",
     shortDescription: "Seamless architectural panel output with low-glare optics.",
@@ -1280,7 +1490,376 @@ export const products = [
   },
 ];
 
+// Easy listing workflow for new products:
+// 1) Add product object inside productCatalog.
+// 2) Add a placement block with category/subcategory/superSubcategory.
+// 3) Keep the legacy hierarchy map only for older items that have not been migrated yet.
+const productHierarchyByName = {
+  "Street Light": {
+    category: "Outdoor Lighting",
+    subcategory: "Street",
+    superSubcategory: "Street Light",
+  },
+  "Smart Streetlight": {
+    category: "Outdoor Lighting",
+    subcategory: "Street",
+    superSubcategory: "Smart Streetlight",
+  },
+  "Smart Street Light": {
+    category: "Outdoor Lighting",
+    subcategory: "Street",
+    superSubcategory: "Smart Street Light",
+  },
+  "Flood Light": {
+    category: "Outdoor Lighting",
+    subcategory: "Flood",
+    superSubcategory: "Flood Light",
+  },
+  "Underwater Light": {
+    category: "Outdoor Lighting",
+    subcategory: "Underwater",
+    superSubcategory: "Underwater Light",
+  },
+  "Inground Light": {
+    category: "Outdoor Lighting",
+    subcategory: "Inground",
+    superSubcategory: "Inground Light",
+  },
+  "Spike Light": {
+    category: "Outdoor Lighting",
+    subcategory: "Spike",
+    superSubcategory: "Spike Light",
+  },
+  "Octagonal Pole": {
+    category: "Outdoor Lighting",
+    subcategory: "Pole",
+    superSubcategory: "Octagonal Pole",
+  },
+  "Tubular Pole": {
+    category: "Outdoor Lighting",
+    subcategory: "Pole",
+    superSubcategory: "Tubular Pole",
+  },
+  "Conicol Pole": {
+    category: "Outdoor Lighting",
+    subcategory: "Pole",
+    superSubcategory: "Conicol Pole",
+  },
+  "Decorative Pole": {
+    category: "Outdoor Lighting",
+    subcategory: "Pole",
+    superSubcategory: "Decorative Pole",
+  },
+  "Designer Pole": {
+    category: "Outdoor Lighting",
+    subcategory: "Pole",
+    superSubcategory: "Designer Pole",
+  },
+  "High Mast Light Pole": {
+    category: "Outdoor Lighting",
+    subcategory: "Pole",
+    superSubcategory: "High Mast Light Pole",
+  },
+  "Panel Light": {
+    category: "Indoor Lighting",
+    subcategory: "Panel",
+    superSubcategory: "Panel Light",
+  },
+  "Smart Panel Light(Round)": {
+    category: "Indoor Lighting",
+    subcategory: "Panel",
+    superSubcategory: "Smart Panel Light (Round)",
+  },
+  "Smart Downlight": {
+    category: "Indoor Lighting",
+    subcategory: "Downlight",
+    superSubcategory: "Smart Downlight",
+  },
+  "Track Light": {
+    category: "Indoor Lighting",
+    subcategory: "Track",
+    superSubcategory: "Track Light",
+  },
+  "COB Light": {
+    category: "Indoor Lighting",
+    subcategory: "Track",
+    superSubcategory: "COB Light",
+  },
+  "LED Light": {
+    category: "Indoor Lighting",
+    subcategory: "Track",
+    superSubcategory: "LED Light",
+  },
+  "Smart Track Light": {
+    category: "Indoor Lighting",
+    subcategory: "Track",
+    superSubcategory: "Smart Track Light",
+  },
+  "Linear Light": {
+    category: "Indoor Lighting",
+    subcategory: "Linear",
+    superSubcategory: "Linear Light",
+  },
+  "Cabinate Light": {
+    category: "Indoor Lighting",
+    subcategory: "Cabinet",
+    superSubcategory: "Cabinate Light",
+  },
+  "Wall Light": {
+    category: "Indoor Lighting",
+    subcategory: "Wall",
+    superSubcategory: "Wall Light",
+  },
+  "Custom Chandeliers": {
+    category: "Indoor Lighting",
+    subcategory: "Chandelier",
+    superSubcategory: "Custom Chandeliers",
+  },
+  Chandeliers: {
+    category: "Indoor Lighting",
+    subcategory: "Chandelier",
+    superSubcategory: "Chandeliers",
+  },
+  "Pendant Light": {
+    category: "Indoor Lighting",
+    subcategory: "Pendant",
+    superSubcategory: "Pendant Light",
+  },
+  "Table Light": {
+    category: "Indoor Lighting",
+    subcategory: "Table",
+    superSubcategory: "Table Light",
+  },
+  "Floor Lamp Light": {
+    category: "Indoor Lighting",
+    subcategory: "Floor Lamp",
+    superSubcategory: "Floor Lamp Light",
+  },
+  "Wall Lamp Light": {
+    category: "Indoor Lighting",
+    subcategory: "Wall",
+    superSubcategory: "Wall Lamp Light",
+  },
+  "LED Ceiling Light": {
+    category: "Indoor Lighting",
+    subcategory: "Ceiling",
+    superSubcategory: "LED Ceiling Light",
+  },
+  "Smart Batten Light": {
+    category: "Indoor Lighting",
+    subcategory: "Batten",
+    superSubcategory: "Smart Batten Light",
+  },
+  "Highbay Light": {
+    category: "Indoor Lighting",
+    subcategory: "Highbay",
+    superSubcategory: "Highbay Light",
+  },
+  "Smart Profile Light": {
+    category: "Aluminum Profile Lighting",
+    subcategory: "Profile",
+    superSubcategory: "Smart Profile Light",
+  },
+  "Smart Cove Light": {
+    category: "Aluminum Profile Lighting",
+    subcategory: "Profile",
+    superSubcategory: "Smart Cove Light",
+  },
+  "Smart LED Linear Light": {
+    category: "Aluminum Profile Lighting",
+    subcategory: "Profile",
+    superSubcategory: "Smart LED Linear Light",
+  },
+  "LED Strip Light": {
+    category: "Strip / Neon Lighting / String Light",
+    subcategory: "Strip / Neon / String",
+    superSubcategory: "LED Strip Light",
+  },
+  "2 Phase Track Patti": {
+    category: "Transformers / Drivers",
+    subcategory: "Track Patti",
+    superSubcategory: "2 Phase Track Patti",
+  },
+  "3 Phase Track Patti": {
+    category: "Transformers / Drivers",
+    subcategory: "Track Patti",
+    superSubcategory: "3 Phase Track Patti",
+  },
+  "Occupancy Sensors Light": {
+    category: "Lighting Controllers",
+    subcategory: "Sensors",
+    superSubcategory: "Occupancy Sensors Light",
+  },
+  Switches: {
+    category: "Lighting Controllers",
+    subcategory: "Switches",
+    superSubcategory: "Switches",
+  },
+  "Smart Bulb": {
+    category: "Indoor Lighting",
+    subcategory: "Bulb",
+    superSubcategory: "Smart Bulb",
+  },
+};
+
+const defaultHierarchy = {
+  category: "Indoor Lighting",
+  subcategory: "General",
+  superSubcategories: ["General Type"],
+};
+
+const toArray = (value) => {
+  if (Array.isArray(value)) {
+    return value.filter(Boolean);
+  }
+
+  return value ? [value] : [];
+};
+
+export const products = productCatalog.map((product) => {
+  const hierarchy = {
+    ...defaultHierarchy,
+    ...(productHierarchyByName[product.name] || {}),
+    ...(product.placement || {}),
+  };
+  const {
+    environment,
+    sector,
+    colorTone,
+    placement,
+    ...catalogProduct
+  } = product;
+  const category = hierarchy.category || product.category || defaultHierarchy.category;
+  const subcategory = hierarchy.subcategory || product.subcategory || defaultHierarchy.subcategory;
+  const superSubcategories = toArray(
+    product.superSubcategories ||
+      product.superSubcategory ||
+      hierarchy.superSubcategories ||
+      hierarchy.superSubcategory ||
+      product.name
+  );
+
+  return {
+    ...catalogProduct,
+    category,
+    subcategory,
+    superSubcategories,
+    superSubcategory: superSubcategories[0] || product.name,
+  };
+});
+
 export const productMap = products.reduce((acc, product) => {
   acc[product.slug] = product;
   return acc;
 }, {});
+
+export const productCategoriesOrdered = [
+  ...productCategories,
+  ...Array.from(
+    new Set(products.map((product) => product.category).filter((category) => !productCategories.includes(category)))
+  ),
+];
+
+export const getCategorySlug = (category = "") =>
+  category
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-");
+
+export const categorySlugMap = productCategoriesOrdered.reduce((acc, category) => {
+  acc[getCategorySlug(category)] = category;
+  return acc;
+}, {});
+
+export const getCategoryFromSlug = (categorySlug) => categorySlugMap[categorySlug];
+
+export const getSubcategoryName = (product = {}) => product.subcategory || "General";
+
+export const getSuperSubcategoryNames = (product = {}) => {
+  const names = toArray(product.superSubcategories || product.superSubcategory);
+
+  if (names.length > 0) {
+    return names;
+  }
+
+  return product.name ? [product.name] : ["Type"];
+};
+
+export const getSuperSubcategoryName = (product = {}) => product.superSubcategory || product.name || "Type";
+
+export const getSubcategorySlug = (subcategory = "") =>
+  subcategory
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-");
+
+const subcategoryNames = Array.from(new Set(products.map((product) => getSubcategoryName(product))));
+
+export const subcategorySlugMap = subcategoryNames.reduce((acc, subcategoryName) => {
+  acc[getSubcategorySlug(subcategoryName)] = subcategoryName;
+  return acc;
+}, {});
+
+export const getSubcategoryFromSlug = (subcategorySlug) => subcategorySlugMap[subcategorySlug];
+
+// Category/Subcategory tile cover images (independent from product image fields).
+// Key format: "<Subcategory>"
+export const subcategoryCoverImages = {
+  Bollard: productImg1,
+  Street: productImage13,
+  Flood: productImage14,
+  Underwater: productImage15,
+  Inground: productImage10,
+  Spike: productImage11,
+  Pole: productImage37,
+
+  Panel: productImage1,
+  Downlight: productImage17,
+  Track: productImage3,
+  Linear: productImage4,
+  Cabinet: productImage5,
+  Wall: productImage9,
+  Chandelier: productImage26,
+  Pendant: productImage27,
+  Table: productImage28,
+  "Floor Lamp": productImage29,
+  Ceiling: productImage31,
+  Batten: productImage22,
+  Highbay: productImage34,
+  Bulb: productImage20,
+
+  Profile: productImage21,
+
+  "Strip / Neon / String": productImage6,
+
+  "Track Patti": productImage35,
+
+  Sensors: productImage32,
+  Switches: productImage33,
+};
+
+export const getSubcategoryCoverImage = (subcategory) => subcategoryCoverImages[subcategory];
+
+export const getSuperSubcategorySlug = (superSubcategory = "") =>
+  superSubcategory
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-");
+
+const superSubcategoryNames = Array.from(
+  new Set(products.flatMap((product) => getSuperSubcategoryNames(product)))
+);
+
+export const superSubcategorySlugMap = superSubcategoryNames.reduce((acc, superSubcategoryName) => {
+  acc[getSuperSubcategorySlug(superSubcategoryName)] = superSubcategoryName;
+  return acc;
+}, {});
+
+export const getSuperSubcategoryFromSlug = (superSubcategorySlug) =>
+  superSubcategorySlugMap[superSubcategorySlug];

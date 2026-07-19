@@ -5,6 +5,9 @@ import ScrollToTop from "../components/ScrollToTop";
 import PageTransition from "../components/PageTransition";
 import HomePage from "../pages/HomePage";
 import ProductsPage from "../pages/ProductsPage";
+import ProductCategoryPage from "../pages/ProductCategoryPage";
+import ProductSubcategoryPage from "../pages/ProductSubcategoryPage";
+import ProductTypePage from "../pages/ProductTypePage";
 import ProductDetailPage from "../pages/ProductDetailPage";
 import ProjectsPage from "../pages/ProjectsPage";
 import ProjectDetailPage from "../pages/ProjectDetailPage";
@@ -28,6 +31,15 @@ const AppRoutes = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={withTransition(<HomePage />)} />
             <Route path="products" element={withTransition(<ProductsPage />)} />
+            <Route path="products/category/:categorySlug" element={withTransition(<ProductCategoryPage />)} />
+            <Route
+              path="products/category/:categorySlug/subcategory/:subcategorySlug"
+              element={withTransition(<ProductSubcategoryPage />)}
+            />
+            <Route
+              path="products/category/:categorySlug/subcategory/:subcategorySlug/products"
+              element={withTransition(<ProductTypePage />)}
+            />
             <Route path="products/:slug" element={withTransition(<ProductDetailPage />)} />
             <Route path="projects" element={withTransition(<ProjectsPage />)} />
             <Route path="projects/:slug" element={withTransition(<ProjectDetailPage />)} />

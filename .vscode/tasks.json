@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build LDS App",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"lumen-atelier",
+				"run",
+				"build"
+			],
+			"isBackground": false
+		}
+	]
+}

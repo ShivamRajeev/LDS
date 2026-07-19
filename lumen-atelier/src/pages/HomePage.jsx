@@ -17,7 +17,7 @@ const HomePage = () => {
   return (
     <>
       <Seo
-        title="Lumen Atelier | Architectural LED Lighting"
+        title="LDS | Architectural LED Lighting"
         description="Premium architectural and decorative lighting solutions for modern spaces, hospitality, retail, and landmark projects."
       />
       <HeroSection />

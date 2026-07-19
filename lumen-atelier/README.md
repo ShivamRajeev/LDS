@@ -1,4 +1,4 @@
-# Lumen Atelier Website
+# LDS Website
 
 A modern premium architectural lighting website built with React, Vite, Tailwind CSS, React Router, and Framer Motion.
 

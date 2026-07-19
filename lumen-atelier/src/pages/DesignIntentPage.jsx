@@ -33,7 +33,7 @@ const DesignIntentPage = () => {
   return (
     <>
       <Seo
-        title="Design Intent | Lumen Atelier"
+        title="Design Intent | LDS"
         description="Educational insights on architectural lighting for homes, hospitality, facade, retail, workplaces, and human-centric environments."
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">

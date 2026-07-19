@@ -8,8 +8,8 @@ const ContactPage = () => {
   return (
     <>
       <Seo
-        title="Contact | Lumen Atelier"
-        description="Reach the Lumen Atelier team for product enquiries, project consultations, and custom lighting discussions."
+        title="Contact | LDS"
+        description="Reach the LDS team for product enquiries, project consultations, and custom lighting discussions."
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">
         <AnimatedSection>

@@ -1,101 +1,105 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
-import SectionTitle from "../components/SectionTitle";
 import AnimatedSection from "../components/AnimatedSection";
-import ProductCard from "../components/ProductCard";
-import FilterSidebar from "../components/FilterSidebar";
-import { products, productCategories, filterOptions } from "../data/products";
+import ProductHierarchyTile from "../components/ProductHierarchyTile";
+import {
+  getCategorySlug,
+  getSubcategoryCoverImage,
+  getSubcategoryName,
+  getSubcategorySlug,
+  productCategoriesOrdered,
+  products,
+} from "../data/products";
 
 const ProductsPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedFilters, setSelectedFilters] = useState({
-    application: "",
-    mounting: "",
-    colorTone: "",
-    sector: "",
-  });
+  const groupedProducts = useMemo(
+    () =>
+      productCategoriesOrdered
+        .map((category) => {
+          const categoryProducts = products.filter((product) => product.category === category);
+          const subcategoryMap = categoryProducts.reduce((acc, product) => {
+            const subcategoryName = getSubcategoryName(product);
 
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
-      const categoryMatch =
-        selectedCategory === "All" || product.category === selectedCategory;
-      const applicationMatch =
-        !selectedFilters.application || product.environment === selectedFilters.application;
-      const mountingMatch =
-        !selectedFilters.mounting || product.mounting === selectedFilters.mounting;
-      const colorMatch = !selectedFilters.colorTone || product.colorTone === selectedFilters.colorTone;
-      const sectorMatch =
-        !selectedFilters.sector || product.sector.includes(selectedFilters.sector);
+            if (!acc.has(subcategoryName)) {
+              acc.set(subcategoryName, {
+                name: subcategoryName,
+                slug: getSubcategorySlug(subcategoryName),
+                coverProduct: product,
+                  coverImage: getSubcategoryCoverImage(subcategoryName) || product.image,
+              });
+            }
 
-      return categoryMatch && applicationMatch && mountingMatch && colorMatch && sectorMatch;
-    });
-  }, [selectedCategory, selectedFilters]);
+            return acc;
+          }, new Map());
+
+          return {
+            category,
+            categorySlug: getCategorySlug(category),
+            subcategories: Array.from(subcategoryMap.values()),
+          };
+        })
+        .filter((group) => group.subcategories.length > 0),
+    []
+  );
 
   return (
     <>
       <Seo
-        title="Products | Lumen Atelier"
-        description="Explore architectural, decorative, facade, and custom LED lighting products for modern spaces."
+        title="Products | LDS"
+        description="Our products and solutions grouped by category and subcategory."
       />
-      <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">
+      <section className="mx-auto w-full max-w-5xl px-4 pb-20 pt-32 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <SectionTitle
-            eyebrow="Product Collections"
-            title="Architectural, Decorative, and Custom Product Families"
-            description="Filter by environment, mounting method, and color tone to find the right fixture for your design program."
-          />
+          <div className="text-center">
+            <h1 className="text-3xl font-semibold uppercase tracking-[0.06em] text-brand-cream sm:text-4xl">
+              Our Products &amp; Solutions
+            </h1>
+            <p className="mx-auto mt-3 max-w-3xl text-sm text-brand-ivory/75 sm:text-base">
+              Category -&gt; Subcategory -&gt; Products
+            </p>
+          </div>
         </AnimatedSection>
 
-        <AnimatedSection className="mt-10 flex flex-wrap gap-3" animateOnScroll={false}>
-          <button
-            type="button"
-            onClick={() => setSelectedCategory("All")}
-            className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.14em] transition ${
-              selectedCategory === "All"
-                ? "border-brand-gold bg-brand-gold text-brand-black"
-                : "border-brand-ivory/25 text-brand-ivory/75 hover:border-brand-gold hover:text-brand-gold"
-            }`}
-          >
-            All
-          </button>
-          {productCategories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              onClick={() => setSelectedCategory(category)}
-              className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.14em] transition ${
-                selectedCategory === category
-                  ? "border-brand-gold bg-brand-gold text-brand-black"
-                  : "border-brand-ivory/25 text-brand-ivory/75 hover:border-brand-gold hover:text-brand-gold"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </AnimatedSection>
+        <div className="mt-12 space-y-14">
+          {groupedProducts.map((group, groupIndex) => (
+            <AnimatedSection key={group.category} delay={groupIndex * 0.04}>
+              <div className="flex items-end justify-between gap-4 border-b border-brand-ivory/20 pb-3">
+                <Link
+                  to={`/products/category/${group.categorySlug}`}
+                  className="text-xl font-semibold uppercase tracking-[0.08em] text-brand-cream transition hover:text-brand-gold sm:text-[1.7rem]"
+                >
+                  {group.category}
+                </Link>
+                <Link
+                  to={`/products/category/${group.categorySlug}`}
+                  className="text-[11px] uppercase tracking-[0.16em] text-brand-gold/90 transition hover:text-brand-cream"
+                >
+                  Open
+                </Link>
+              </div>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[290px_1fr]">
-          <AnimatedSection animateOnScroll={false}>
-            <FilterSidebar
-              filters={filterOptions}
-              selectedFilters={selectedFilters}
-              setSelectedFilters={setSelectedFilters}
-            />
-          </AnimatedSection>
-
-          <AnimatedSection animateOnScroll={false}>
-            {filteredProducts.length > 0 ? (
-              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {filteredProducts.map((product, index) => (
-                  <ProductCard key={product.id} product={product} priority={index < 6} />
+              <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4">
+                {group.subcategories.map((subcategory) => (
+                  <ProductHierarchyTile
+                    key={`${group.category}-${subcategory.slug}`}
+                    to={
+                      subcategory.name === "Bollard"
+                        ? `/products/category/${group.categorySlug}/subcategory/${subcategory.slug}/products`
+                        : `/products/category/${group.categorySlug}/subcategory/${subcategory.slug}`
+                    }
+                    label={subcategory.name}
+                    image={subcategory.coverImage}
+                    ariaLabel={
+                      subcategory.name === "Bollard"
+                        ? `Open ${subcategory.name} products`
+                        : `Open ${subcategory.name} subcategory`
+                    }
+                  />
                 ))}
               </div>
-            ) : (
-              <p className="rounded-xl border border-brand-ivory/10 bg-brand-charcoal/70 p-6 text-brand-ivory/75">
-                No products match your selected criteria.
-              </p>
-            )}
-          </AnimatedSection>
+            </AnimatedSection>
+          ))}
         </div>
       </section>
     </>

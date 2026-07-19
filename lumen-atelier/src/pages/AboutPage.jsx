@@ -33,8 +33,8 @@ const AboutPage = () => {
   return (
     <>
       <Seo
-        title="About Us | Lumen Atelier"
-        description="Learn about Lumen Atelier's vision, R&D philosophy, design collaboration process, manufacturing quality, and global outlook."
+        title="About Us | LDS"
+        description="Learn about LDS's vision, R&D philosophy, design collaboration process, manufacturing quality, and global outlook."
       />
       <section className="mx-auto w-full max-w-7xl px-6 pb-20 pt-32 sm:px-8 lg:px-10">
         <AnimatedSection>

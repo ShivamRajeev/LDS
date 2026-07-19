@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { productCategories } from "../data/products";
+import { getCategorySlug, productCategoriesOrdered } from "../data/products";
 
 const quickLinks = [
   { label: "Products", to: "/products" },
@@ -41,8 +41,12 @@ const Footer = () => {
             Product Categories
           </h4>
           <ul className="mt-4 space-y-2 text-sm text-brand-ivory/70">
-            {productCategories.map((category) => (
-              <li key={category}>{category}</li>
+            {productCategoriesOrdered.map((category) => (
+              <li key={category}>
+                <Link to={`/products/category/${getCategorySlug(category)}`} className="transition hover:text-brand-gold">
+                  {category}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

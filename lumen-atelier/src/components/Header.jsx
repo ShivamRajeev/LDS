@@ -34,11 +34,11 @@ const Header = () => {
       }`}
     >
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-10">
-        <Link to="/" className="flex items-center" aria-label="Lumen Atelier home">
-          <span className="sr-only">Lumen Atelier</span>
+        <Link to="/" className="flex items-center" aria-label="LDS home">
+          <span className="sr-only">LDS</span>
           <img
             src={`${headerLogo}?replay=${logoReplayKey}`}
-            alt="Lumen Atelier"
+            alt="LDS"
             className="h-17 w-auto max-w-[18rem] object-contain sm:h-18 sm:max-w-[20rem] lg:h-20 lg:max-w-[22rem]"
             onMouseEnter={() => setLogoReplayKey((currentKey) => currentKey + 1)}
             onFocus={() => setLogoReplayKey((currentKey) => currentKey + 1)}
