@@ -1,10 +1,14 @@
 import productImg1 from "../assets/placeholders/Product/Bollard/Bollard_Image.png"
-import productImg2 from "../assets/placeholders/Product/Bollard_light.png"
+import productImg2 from "../assets/placeholders/Product/Bollard/Bollard_light.png"
+import productImg3 from "../assets/placeholders/Product/Bollard/Bollard_1.png"
+import productImg4 from "../assets/placeholders/Product/Bollard/Bollard_2.png"
+import productImg5 from "../assets/placeholders/Product/Bollard/Bollard_3.png"
+import productImg6 from "../assets/placeholders/Product/Bollard/Bollard_4.png"
+import productImg7 from "../assets/placeholders/Product/Bollard/Bollard_5.png"
 
 
-import productImage from "../assets/placeholders/Product/Cob_light.png";
-import productImage1 from "../assets/placeholders/Product/Panel_light.png";
 import productImage2 from "../assets/placeholders/Product/Cob_light.png";
+import productImage1 from "../assets/placeholders/Product/Panel_light.png";
 import productImage3 from "../assets/placeholders/Product/Track_light.png";
 import productImage4 from "../assets/placeholders/Product/Linear_light.png";
 import productImage5 from "../assets/placeholders/Product/Cabinate_light.png";
@@ -74,6 +78,11 @@ const productCatalog = [
     id: "bollard-light1",
     slug: "bollard-light1",
     name: "10W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
     category: "Outdoor Lighting",
     description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
     shortDescription: "Bollard lights are commonly used to illuminate walkways",
@@ -105,10 +114,217 @@ const productCatalog = [
     datasheet: "/datasheets/Bollard_Light_Datasheet.pdf",
     image: productImg2,
   },
+  {
+    id: "bollard-light2",
+    slug: "bollard-light2",
+    name: "11W LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "11W LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Panel",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "SMD, CREE",
+      "80lm/Watt warm white output",
+      "220-240V AC, 50-60Hz power supply",
+      "Diffused 360° beam angle",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Tempered glass diffuser"
+    ],
+    specifications: {
+      wattage: "11W",
+      beamAngle: "360°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg3,
+  },
+{
+    id: "bollard-light3",
+    slug: "bollard-light3",
+    name: "7W L-SHAPED LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "7W L-SHAPED LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "80lm/Watt warm white output",
+      "190-240V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Tempered glass diffuser"
+    ],
+    specifications: {
+      wattage: "7W",
+      beamAngle: "Asymmetric",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg4,
+  },
+  {
+    id: "bollard-light4",
+    slug: "bollard-light4",
+    name: "10W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "10W OUTDOOR LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "70lm/Watt warm white output",
+      "190-240V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Tempered glass diffuser"
+    ],
+    specifications: {
+      wattage: "7W",
+      beamAngle: "Asymmetric 130°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg5,
+  },
+  {
+    id: "bollard-light5",
+    slug: "bollard-light5",
+    name: "15W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "15W OUTDOOR LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "1200lm warm white output",
+      "190-240V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Opal acrylic diffuser"
+    ],
+    specifications: {
+      wattage: "15W",
+      beamAngle: "Diffused (360°) beam angle",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg6,
+  },
+    {
+    id: "bollard-light5",
+    slug: "bollard-light5",
+    name: "5W OUTDOOR LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, building entrances and all outdoor and landscape designs to make them attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "5W OUTDOOR LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "COB, CREE",
+      "90lm warm white output",
+      "100-260V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Die-cast aluminum body material",
+      "Frosted acrylic diffuser"
+    ],
+    specifications: {
+      wattage: "5W",
+      beamAngle: "Diffused (360°) beam angle",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Fixed on to concrete foundation installation",
+      material: "Die-cast aluminum bracket material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg7,
+  },
+
    {
     id: "panel-light1",
     slug: "panel-light1",
     name: "Panel Light",
+    placement: {
+      category: "Indoor Lighting",
+      subcategory: "Panel",
+      superSubcategory: "Panel Light",
+    },
     category: "Panel Lights",
     description: "These new recessed ceiling luminaires ready for connection offer a cost-effective complete solution for efficient illumination in the private sector and anywhere a quick and simple lighting solution needs to be created with top-quality recessed ceiling luminaires. Suitable for hotels, conference rooms,factories, offices, commercial purposes, institution buildings, schools, colleges,universities, hospitals and other places which needs energy saving and high color rendering index lighting.",
     shortDescription: "Seamless architectural panel output with low-glare optics.",
@@ -1276,14 +1492,9 @@ const productCatalog = [
 
 // Easy listing workflow for new products:
 // 1) Add product object inside productCatalog.
-// 2) Add hierarchy entry here by product name.
-// 3) Use superSubcategories as array when one product belongs to multiple product groupings.
+// 2) Add a placement block with category/subcategory/superSubcategory.
+// 3) Keep the legacy hierarchy map only for older items that have not been migrated yet.
 const productHierarchyByName = {
-  "10W OUTDOOR LED BOLLARD LIGHT": {
-    category: "Outdoor Lighting",
-    subcategory: "Bollard",
-    superSubcategory: "Bollard Light",
-  },
   "Street Light": {
     category: "Outdoor Lighting",
     subcategory: "Street",
@@ -1506,21 +1717,25 @@ const toArray = (value) => {
 };
 
 export const products = productCatalog.map((product) => {
-  const hierarchy = productHierarchyByName[product.name] || defaultHierarchy;
+  const hierarchy = {
+    ...defaultHierarchy,
+    ...(productHierarchyByName[product.name] || {}),
+    ...(product.placement || {}),
+  };
   const {
     environment,
     sector,
     colorTone,
+    placement,
     ...catalogProduct
   } = product;
-  const category = product.category || hierarchy.category || defaultHierarchy.category;
-  const subcategory = product.subcategory || hierarchy.subcategory || defaultHierarchy.subcategory;
+  const category = hierarchy.category || product.category || defaultHierarchy.category;
+  const subcategory = hierarchy.subcategory || product.subcategory || defaultHierarchy.subcategory;
   const superSubcategories = toArray(
     product.superSubcategories ||
       product.superSubcategory ||
       hierarchy.superSubcategories ||
       hierarchy.superSubcategory ||
-      defaultHierarchy.superSubcategories ||
       product.name
   );
 
