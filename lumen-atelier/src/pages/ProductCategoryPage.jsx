@@ -74,10 +74,10 @@ const ProductCategoryPage = () => {
             {categorySubcategories.map((subcategory) => (
               <ProductHierarchyTile
                 key={`${categoryName}-${subcategory.slug}`}
-                to={`/products/category/${categorySlug}/subcategory/${subcategory.slug}`}
+                to={`/products/category/${categorySlug}/subcategory/${subcategory.slug}/products`}
                 label={subcategory.name}
                 image={subcategory.coverImage}
-                ariaLabel={`Open ${subcategory.name} subcategory`}
+                ariaLabel={`Open ${subcategory.name} products`}
               />
             ))}
           </div>

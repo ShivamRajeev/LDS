@@ -14,7 +14,9 @@ const ProductTypePage = () => {
   const { categorySlug, subcategorySlug } = useParams();
   const categoryName = getCategoryFromSlug(categorySlug || "");
   const subcategoryName = getSubcategoryFromSlug(subcategorySlug || "");
-  const isBollardProducts = categorySlug === "outdoor-lighting" && subcategorySlug === "bollard";
+  const isDirectProductsPage =
+    (categorySlug === "outdoor-lighting" && subcategorySlug === "bollard") ||
+    (categorySlug === "indoor-lighting" && subcategorySlug === "ceiling");
 
   const subcategoryProducts = products.filter(
     (product) =>
@@ -62,7 +64,7 @@ const ProductTypePage = () => {
             <Link to={`/products/category/${categorySlug}`} className="transition hover:text-brand-gold">
               {categoryName}
             </Link>
-            {!isBollardProducts && (
+            {!isDirectProductsPage && (
               <>
                 <span>/</span>
                 <Link
@@ -78,10 +80,10 @@ const ProductTypePage = () => {
           </nav>
 
           <Link
-            to={isBollardProducts ? `/products/category/${categorySlug}` : `/products/category/${categorySlug}/subcategory/${subcategorySlug}`}
+            to={isDirectProductsPage ? `/products/category/${categorySlug}` : `/products/category/${categorySlug}/subcategory/${subcategorySlug}`}
             className="inline-flex items-center text-xs uppercase tracking-[0.16em] text-brand-gold transition hover:text-brand-cream"
           >
-            {isBollardProducts ? "Back To Category" : "Back To Image"}
+            {isDirectProductsPage ? "Back To Category" : "Back To Image"}
           </Link>
           <h1 className="mt-5 font-display text-4xl text-brand-cream sm:text-5xl">
             {subcategoryName} Products

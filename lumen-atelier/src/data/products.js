@@ -1,3 +1,4 @@
+/*Bollard*/
 import productImg1 from "../assets/placeholders/Product/Bollard/Bollard_Image.png"
 import productImg2 from "../assets/placeholders/Product/Bollard/Bollard_light.png"
 import productImg3 from "../assets/placeholders/Product/Bollard/Bollard_1.png"
@@ -5,7 +6,18 @@ import productImg4 from "../assets/placeholders/Product/Bollard/Bollard_2.png"
 import productImg5 from "../assets/placeholders/Product/Bollard/Bollard_3.png"
 import productImg6 from "../assets/placeholders/Product/Bollard/Bollard_4.png"
 import productImg7 from "../assets/placeholders/Product/Bollard/Bollard_5.png"
+import productImg8 from "../assets/placeholders/Product/Bollard/Bollard_6.png"
+import productImg9 from "../assets/placeholders/Product/Bollard/Bollard_7.png"
+import productImg10 from "../assets/placeholders/Product/Bollard/Bollard_8.png"
 
+/*Ceiling*/
+import productImg11 from "../assets/placeholders/Product/Ceiling/Ceiling_Image.jpg"
+import productImg12 from "../assets/placeholders/Product/Ceiling/Ceiling_1.png"
+import productImg13 from "../assets/placeholders/Product/Ceiling/Ceiling_2.png"
+import productImg14 from "../assets/placeholders/Product/Ceiling/Ceiling_3.png"
+import productImg15 from "../assets/placeholders/Product/Ceiling/Ceiling_4.png"
+import productImg16 from "../assets/placeholders/Product/Ceiling/Ceiling_5.png"
+import productImg17 from "../assets/placeholders/Product/Ceiling/Ceiling_6.png"
 
 import productImage2 from "../assets/placeholders/Product/Cob_light.png";
 import productImage1 from "../assets/placeholders/Product/Panel_light.png";
@@ -276,8 +288,8 @@ const productCatalog = [
     image: productImg6,
   },
     {
-    id: "bollard-light5",
-    slug: "bollard-light5",
+    id: "bollard-light6",
+    slug: "bollard-light6",
     name: "5W OUTDOOR LED BOLLARD LIGHT",
     placement: {
       category: "Outdoor Lighting",
@@ -315,6 +327,378 @@ const productCatalog = [
     datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
     image: productImg7,
   },
+    {
+    id: "bollard-light7",
+    slug: "bollard-light7",
+    name: "15W OUTDOOR LED BOLLARD LIGHT-H800mm",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "These new designs bring a bit of texture and formal simplicity to outdoor spaces. An aluminium structure surrounding the fixture creates an interior space where light and materials interact, with the soft LED lighting playing off sheets of painted metal. The beauty of this new collection is in the interplay of light and texture. As with the original version of the Lab, the light source remains hidden, but its output is being increased, for a greater presence in dark outdoor spaces.",
+    shortDescription: "15W OUTDOOR LED BOLLARD LIGHT-H800mm",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "SMD, CREE",
+      "80-90lm/Watt lumen output",
+      "220-240V AC, 50-60Hz power supply",
+      "Life time Hours 50000",
+      "Stainless steel Bracket material",
+      "PMMA diffuser",
+      "Impact protection IK08"
+    ],
+    specifications: {
+      wattage: "15W",
+      beamAngle: "1 Sided(90°) beam angle",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">90",
+      mountingType: "Ground mounted installation",
+      material: "Stainless steel Body material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg8,
+  },
+      {
+    id: "bollard-light8",
+    slug: "bollard-light8",
+    name: "LED BOLLARD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, and building entrances and all outdoor and landscape design to make it attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "LED BOLLARD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "Cree SMD LED - Light Source",
+      "80-90lm (3000K) - Output Lumen",
+      "220-240V AC, 50-60Hz - Input Voltage",
+      "70,000 Hrs - Life Span",
+      "Stainless steel Bracket material",
+      "PMMA diffuser",
+      "Impact protection IK08",
+      "ON / OFF - Control"
+    ],
+    specifications: {
+      wattage: "10W",
+      beamAngle: "1 Side",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Floor Mounted - Installation",
+      material: "Die cast Aluminum - Body Material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg9,
+  },
+{
+    id: "bollard-light9",
+    slug: "bollard-light9",
+    name: "LED BOLLARD LIGHT(STAINLESS STEEL BODY)",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Bollard",
+      superSubcategory: "Bollard Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Bollard lighting is one of the most important options in urban and suburban areas, bollard lights are commonly used to illuminate walkways, parking lots, boardwalks, pathways, and building entrances and all outdoor and landscape design to make it attractive. We have a wide range of lights available for landscape lighting as they are offered in a variety of styles, colors, and materials. These lights are mainly being used to mark the course of a path and further to designate the borders of any public area, such as outdoor seating areas or parking spots, and create an attractive ambient to your home, improve your property security by increasing visibility.",
+    shortDescription: "LED BOLLARD LIGHT(STAINLESS STEEL BODY)",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Recessed",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Bollard",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "LED - Light Source",
+      "80-90lm/Watt - Output Lumen",
+      "220-240V AC, 50-60Hz - Input Voltage",
+      "50,000Hrs - LED Life Span",
+      "Stainless Steel 316L - Bracket Material",
+      "PMMA diffuser",
+      "Impact protection IK08",
+      "ON / OFF - Control"
+    ],
+    specifications: {
+      wattage: "17W",
+      beamAngle: "Diffused (360°)",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">90",
+      mountingType: "Floor Mounted - Installation",
+      material: "Stainless Steel 316L - Body Material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg10,
+  },
+  {
+    id: "ceiling-light1",
+    slug: "ceiling-light1",
+    name: "25W OUTDOOR WALL / CEILING BULKHEAD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Ceiling",
+      superSubcategory: "Ceiling Light",
+    },
+    category: "Outdoor Lighting",
+    description: "This round LED bulkhead can be wall-mounted or ceiling mounted. Perfect to be used is corridors, hallways, walksways, stairwell, car park and basements. Rigorously tested to ensure resistance againts dust and splashing water, that round LED bulkhead light is ideal for maximum impact resistance. This luminaire is ideal for high traffic areas where security is highly needed. A sleek and modern take on the classic round fitting. Slimmer than similar fittings of this size with a tectured grey body and opal acrylic diffuser.",
+    shortDescription: "25W OUTDOOR WALL / CEILING BULKHEAD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Wall / Ceiling Mounted",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Ceiling",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "CREE SMD LED - Light Source",
+      "1750LM Warm White - Output Lumen",
+      "190-265V AC, 50-60Hz",
+      "50,000Hrs - LED Life Span",
+      "Die-Cast Aluminum - Body Material",
+      "Opal Acrylic - Diffuser",
+      "IK 06 - Impact Protection",
+    ],
+    specifications: {
+      wattage: "25W",
+      beamAngle: "110° beam angle",
+      colorTemperature: "3000K WW",
+      ipRating: "IP65",
+      cri: ">90",
+      mountingType: "Wall / Ceiling Mounted",
+      material: "Textured Grey - Body Finish",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg12,
+  },
+    {
+    id: "ceiling-light2",
+    slug: "ceiling-light2",
+    name: "OUTDOOR LED HALFMOON WALL BULKHEAD LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Ceiling",
+      superSubcategory: "Ceiling Light",
+    },
+    category: "Outdoor Lighting",
+    description: "LED bulkhead lights are a durable, energy-efficient, and long-lasting lighting solution that can be used in a variety of indoor and outdoor settings. Their versatility and durability make them a popular choice for many homeowners and businesses.Perfect to be used is corridors, hallways, walkways, stairwell, car park and basements. Rigorously tested to ensure resistance against dust and splashing water, this round LED bulkhead light is ideal for outdoor spaces. Constructed from tough opal acrylic for maximum impact resistance. This luminaire is ideal for high-traffic areas where security is highly needed. A sleek and modern take on the classic round fitting. The housing of these lights is powder coated in textured dark and has an opal acrylic as a diffuser.",
+    shortDescription: "OUTDOOR LED HALFMOON WALL BULKHEAD LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Wall / Ceiling Mounted",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Ceiling",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "Osram SMD LED Light Source",
+      "80-90lm/Watt lumen output",
+      "190-265V AC, 50-60Hz",
+      "Life time more than 50000Hrs",
+      "Die-casting aluminum body and bracket material",
+      "Opal Acrylic - Diffuser",
+    ],
+    specifications: {
+      wattage: "20W",
+      beamAngle: "110°",
+      colorTemperature: "3000K WW",
+      ipRating: "IP65",
+      cri: ">90",
+      mountingType: "Wall / Ceiling Mounted",
+      material: "Textured grey body finish",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg13,
+  },
+      {
+    id: "ceiling-light3",
+    slug: "ceiling-light3",
+    name: "12W CEILING SURFACE MOUNTED LED DOWN LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Ceiling",
+      superSubcategory: "Ceiling Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Surface Mounted Ceiling light luminaire range is a dedicated, affordable choice of innovative lighting that enables massive energy savings to be installed are replaced by the latest technology. The luminaire’s easily removable top cover, and Installation for general lighting applications in homes, offices and shops.",
+    shortDescription: "12W CEILING SURFACE MOUNTED LED DOWN LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Wall / Ceiling Mounted",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Ceiling",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "CREE COB LED Light Source",
+      "1040lm lumen output",
+      "100-240V AC, 50-60Hz",
+      "Life time more than 50000Hrs",
+      "Die-casting aluminum body material",
+      "Clear glass diffuser",
+      "Stainless steel color finish",
+    ],
+    specifications: {
+      wattage: "12W",
+      beamAngle: "60°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">90",
+      mountingType: "Ceiling surface mounted installation",
+      material: "Aluminum extruded heat sink material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg14,
+  },
+  {
+    id: "ceiling-light4",
+    slug: "ceiling-light4",
+    name: "12W CEILING SURFACE MOUNTED LED DOWN LIGHT-SQ01",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Ceiling",
+      superSubcategory: "Ceiling Light",
+    },
+    category: "Outdoor Lighting",
+    description: "Surface Mounted Ceiling light luminaire range is a dedicated, affordable choice of innovative lighting that enables massive energy savings to be installations are replaced by the latest technology. The luminaire’s easily removable top cover, and Installation for general lighting applications in home, offices and shops.",
+    shortDescription: "12W CEILING SURFACE MOUNTED LED DOWN LIGHT-SQ01",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Wall / Ceiling Mounted",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Ceiling",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "CREE COB LED - Light Source",
+      "600lm - Output Lumen",
+      "100-240V AC, 50-60Hz - Input Voltage",
+      "Life time more than 50000Hrs",
+      "Die-casting aluminum body material",
+      "Clear glass diffuser",
+      "Textured dark grey color finish",
+    ],
+    specifications: {
+      wattage: "12W",
+      beamAngle: "60°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">90",
+      mountingType: "Ceiling surface mounted installation",
+      material: "Die-cast aluminum body material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg15,
+  },
+  {
+    id: "ceiling-light5",
+    slug: "ceiling-light5",
+    name: "GU10 ADJUSTABLE CEILING RECESSED LED DOWN LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Ceiling",
+      superSubcategory: "Ceiling Light",
+    },
+    category: "Outdoor Lighting",
+    description: "This variant really fits in every room of your interior! With this smart recessed spot you are ready in no time and you have the perfect basic lighting, functional lighting and mood lighting in one. The recessed spot is supplied including a GU10 light source that can set the light source in any color you want. So easily dim the light to the desired strength and light color and provide your home with the desired atmosphere. Suitable for kitchen, living room or bedroom attractive with the recessed spotlight.",
+    shortDescription: "GU10 ADJUSTABLE CEILING RECESSED LED DOWN LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Wall / Ceiling Mounted",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Ceiling",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "GU10 Lamp base",
+      "Lumen output depend on lamp",
+      "Max 50W power consumption",
+      "220-240V AC, 50-60Hz",
+      "Life time more than 50000Hrs",
+      "Die-cast aluminum body material and stainless steel 316 frame material",
+      "Clear glass diffuser",
+      "Stainless steel color finish",
+      "Ø112 mm cutout",
+    ],
+    specifications: {
+      wattage: "Max. 50W",
+      beamAngle: "38°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: "-",
+      mountingType: "Ceiling surface mounted installation",
+      material: "Die-cast aluminum body material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg16,
+  },
+   {
+    id: "ceiling-light6",
+    slug: "ceiling-light6",
+    name: "ROUND CEILING RECESSED LED DOWN LIGHT",
+    placement: {
+      category: "Outdoor Lighting",
+      subcategory: "Ceiling",
+      superSubcategory: "Ceiling Light",
+    },
+    category: "Outdoor Lighting",
+    description: "This waterproof recessed LED down-light has a high ingress protection rating (IP65) this light can be used either indoor or outdoor with a great light distribution with warm white color temp as an ideal fixture for most outdoor ceiling lighting designs. the outside of the light fitting comes in a while finish but it can be customized to black / Grey or other available colors as per order. The driver is included in the light so there is one driver per fitting. For control options, we are flexible to customized this fixture as per project requirements subjected to min quantity order.",
+    shortDescription: "ROUND CEILING RECESSED LED DOWN LIGHT",
+    applicationArea: "Outdoor areas such as pathways, parks, and gardens",
+    applications: ["Outdoor", "Commercial", "Retail"],
+    mounting: "Wall / Ceiling Mounted",
+    environment: "Outdoor",
+    sector: ["Commercial", "Retail"],
+    lightingType: "Ceiling",
+    colorTone: "Neutral White",
+    colorTemperature: "4000K NW",
+    features: [
+      "CREE LED - Light Source",
+      "80 - 90lm/Watt",
+      "220-240V AC,50-60Hz",
+      "50,000Hrs - LED Life Span",
+      "On / Off - Control (*Other control methods can be made as per order.)",
+      "Clear Tempered Glass - Diffuser",
+    ],
+    specifications: {
+      wattage: "10W",
+      beamAngle: "40°",
+      colorTemperature: "4000K NW",
+      ipRating: "IP65",
+      cri: ">80",
+      mountingType: "Ceiling Recessed - Installation",
+      material: "Die-cast Aluminum - Body Material",
+    },
+    datasheet: "/datasheets/Panel_Light_Datasheet.pdf",
+    image: productImg17,
+  },
+
 
    {
     id: "panel-light1",
@@ -1490,218 +1874,6 @@ const productCatalog = [
   },
 ];
 
-// Easy listing workflow for new products:
-// 1) Add product object inside productCatalog.
-// 2) Add a placement block with category/subcategory/superSubcategory.
-// 3) Keep the legacy hierarchy map only for older items that have not been migrated yet.
-const productHierarchyByName = {
-  "Street Light": {
-    category: "Outdoor Lighting",
-    subcategory: "Street",
-    superSubcategory: "Street Light",
-  },
-  "Smart Streetlight": {
-    category: "Outdoor Lighting",
-    subcategory: "Street",
-    superSubcategory: "Smart Streetlight",
-  },
-  "Smart Street Light": {
-    category: "Outdoor Lighting",
-    subcategory: "Street",
-    superSubcategory: "Smart Street Light",
-  },
-  "Flood Light": {
-    category: "Outdoor Lighting",
-    subcategory: "Flood",
-    superSubcategory: "Flood Light",
-  },
-  "Underwater Light": {
-    category: "Outdoor Lighting",
-    subcategory: "Underwater",
-    superSubcategory: "Underwater Light",
-  },
-  "Inground Light": {
-    category: "Outdoor Lighting",
-    subcategory: "Inground",
-    superSubcategory: "Inground Light",
-  },
-  "Spike Light": {
-    category: "Outdoor Lighting",
-    subcategory: "Spike",
-    superSubcategory: "Spike Light",
-  },
-  "Octagonal Pole": {
-    category: "Outdoor Lighting",
-    subcategory: "Pole",
-    superSubcategory: "Octagonal Pole",
-  },
-  "Tubular Pole": {
-    category: "Outdoor Lighting",
-    subcategory: "Pole",
-    superSubcategory: "Tubular Pole",
-  },
-  "Conicol Pole": {
-    category: "Outdoor Lighting",
-    subcategory: "Pole",
-    superSubcategory: "Conicol Pole",
-  },
-  "Decorative Pole": {
-    category: "Outdoor Lighting",
-    subcategory: "Pole",
-    superSubcategory: "Decorative Pole",
-  },
-  "Designer Pole": {
-    category: "Outdoor Lighting",
-    subcategory: "Pole",
-    superSubcategory: "Designer Pole",
-  },
-  "High Mast Light Pole": {
-    category: "Outdoor Lighting",
-    subcategory: "Pole",
-    superSubcategory: "High Mast Light Pole",
-  },
-  "Panel Light": {
-    category: "Indoor Lighting",
-    subcategory: "Panel",
-    superSubcategory: "Panel Light",
-  },
-  "Smart Panel Light(Round)": {
-    category: "Indoor Lighting",
-    subcategory: "Panel",
-    superSubcategory: "Smart Panel Light (Round)",
-  },
-  "Smart Downlight": {
-    category: "Indoor Lighting",
-    subcategory: "Downlight",
-    superSubcategory: "Smart Downlight",
-  },
-  "Track Light": {
-    category: "Indoor Lighting",
-    subcategory: "Track",
-    superSubcategory: "Track Light",
-  },
-  "COB Light": {
-    category: "Indoor Lighting",
-    subcategory: "Track",
-    superSubcategory: "COB Light",
-  },
-  "LED Light": {
-    category: "Indoor Lighting",
-    subcategory: "Track",
-    superSubcategory: "LED Light",
-  },
-  "Smart Track Light": {
-    category: "Indoor Lighting",
-    subcategory: "Track",
-    superSubcategory: "Smart Track Light",
-  },
-  "Linear Light": {
-    category: "Indoor Lighting",
-    subcategory: "Linear",
-    superSubcategory: "Linear Light",
-  },
-  "Cabinate Light": {
-    category: "Indoor Lighting",
-    subcategory: "Cabinet",
-    superSubcategory: "Cabinate Light",
-  },
-  "Wall Light": {
-    category: "Indoor Lighting",
-    subcategory: "Wall",
-    superSubcategory: "Wall Light",
-  },
-  "Custom Chandeliers": {
-    category: "Indoor Lighting",
-    subcategory: "Chandelier",
-    superSubcategory: "Custom Chandeliers",
-  },
-  Chandeliers: {
-    category: "Indoor Lighting",
-    subcategory: "Chandelier",
-    superSubcategory: "Chandeliers",
-  },
-  "Pendant Light": {
-    category: "Indoor Lighting",
-    subcategory: "Pendant",
-    superSubcategory: "Pendant Light",
-  },
-  "Table Light": {
-    category: "Indoor Lighting",
-    subcategory: "Table",
-    superSubcategory: "Table Light",
-  },
-  "Floor Lamp Light": {
-    category: "Indoor Lighting",
-    subcategory: "Floor Lamp",
-    superSubcategory: "Floor Lamp Light",
-  },
-  "Wall Lamp Light": {
-    category: "Indoor Lighting",
-    subcategory: "Wall",
-    superSubcategory: "Wall Lamp Light",
-  },
-  "LED Ceiling Light": {
-    category: "Indoor Lighting",
-    subcategory: "Ceiling",
-    superSubcategory: "LED Ceiling Light",
-  },
-  "Smart Batten Light": {
-    category: "Indoor Lighting",
-    subcategory: "Batten",
-    superSubcategory: "Smart Batten Light",
-  },
-  "Highbay Light": {
-    category: "Indoor Lighting",
-    subcategory: "Highbay",
-    superSubcategory: "Highbay Light",
-  },
-  "Smart Profile Light": {
-    category: "Aluminum Profile Lighting",
-    subcategory: "Profile",
-    superSubcategory: "Smart Profile Light",
-  },
-  "Smart Cove Light": {
-    category: "Aluminum Profile Lighting",
-    subcategory: "Profile",
-    superSubcategory: "Smart Cove Light",
-  },
-  "Smart LED Linear Light": {
-    category: "Aluminum Profile Lighting",
-    subcategory: "Profile",
-    superSubcategory: "Smart LED Linear Light",
-  },
-  "LED Strip Light": {
-    category: "Strip / Neon Lighting / String Light",
-    subcategory: "Strip / Neon / String",
-    superSubcategory: "LED Strip Light",
-  },
-  "2 Phase Track Patti": {
-    category: "Transformers / Drivers",
-    subcategory: "Track Patti",
-    superSubcategory: "2 Phase Track Patti",
-  },
-  "3 Phase Track Patti": {
-    category: "Transformers / Drivers",
-    subcategory: "Track Patti",
-    superSubcategory: "3 Phase Track Patti",
-  },
-  "Occupancy Sensors Light": {
-    category: "Lighting Controllers",
-    subcategory: "Sensors",
-    superSubcategory: "Occupancy Sensors Light",
-  },
-  Switches: {
-    category: "Lighting Controllers",
-    subcategory: "Switches",
-    superSubcategory: "Switches",
-  },
-  "Smart Bulb": {
-    category: "Indoor Lighting",
-    subcategory: "Bulb",
-    superSubcategory: "Smart Bulb",
-  },
-};
-
 const defaultHierarchy = {
   category: "Indoor Lighting",
   subcategory: "General",
@@ -1719,7 +1891,6 @@ const toArray = (value) => {
 export const products = productCatalog.map((product) => {
   const hierarchy = {
     ...defaultHierarchy,
-    ...(productHierarchyByName[product.name] || {}),
     ...(product.placement || {}),
   };
   const {
@@ -1810,6 +1981,8 @@ export const getSubcategoryFromSlug = (subcategorySlug) => subcategorySlugMap[su
 // Key format: "<Subcategory>"
 export const subcategoryCoverImages = {
   Bollard: productImg1,
+  Ceiling: productImg11,
+  
   Street: productImage13,
   Flood: productImage14,
   Underwater: productImage15,
@@ -1827,7 +2000,6 @@ export const subcategoryCoverImages = {
   Pendant: productImage27,
   Table: productImage28,
   "Floor Lamp": productImage29,
-  Ceiling: productImage31,
   Batten: productImage22,
   Highbay: productImage34,
   Bulb: productImage20,
