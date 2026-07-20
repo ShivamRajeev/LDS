@@ -83,18 +83,10 @@ const ProductsPage = () => {
                 {group.subcategories.map((subcategory) => (
                   <ProductHierarchyTile
                     key={`${group.category}-${subcategory.slug}`}
-                    to={
-                      subcategory.name === "Bollard"
-                        ? `/products/category/${group.categorySlug}/subcategory/${subcategory.slug}/products`
-                        : `/products/category/${group.categorySlug}/subcategory/${subcategory.slug}`
-                    }
+                    to={`/products/category/${group.categorySlug}/subcategory/${subcategory.slug}/products`}
                     label={subcategory.name}
                     image={subcategory.coverImage}
-                    ariaLabel={
-                      subcategory.name === "Bollard"
-                        ? `Open ${subcategory.name} products`
-                        : `Open ${subcategory.name} subcategory`
-                    }
+                    ariaLabel={`Open ${subcategory.name} products`}
                   />
                 ))}
               </div>

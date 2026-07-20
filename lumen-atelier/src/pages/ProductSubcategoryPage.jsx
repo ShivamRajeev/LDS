@@ -12,11 +12,14 @@ const ProductSubcategoryPage = () => {
   const categoryName = getCategoryFromSlug(categorySlug || "");
   const subcategoryName = getSubcategoryFromSlug(subcategorySlug || "");
   const coverImage = getSubcategoryCoverImage(subcategoryName || "");
-  const isBollardSubcategory =
-    categorySlug === "outdoor-lighting" && subcategorySlug === "bollard";
 
-  if (isBollardSubcategory) {
-    return <Navigate replace to="/products/category/outdoor-lighting/subcategory/bollard/products" />;
+  if (categoryName && subcategoryName && coverImage) {
+    return (
+      <Navigate
+        replace
+        to={`/products/category/${categorySlug}/subcategory/${subcategorySlug}/products`}
+      />
+    );
   }
 
   if (!categoryName || !subcategoryName || !coverImage) {
