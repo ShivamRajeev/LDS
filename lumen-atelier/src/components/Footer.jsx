@@ -13,13 +13,12 @@ const quickLinks = [
 
 const Footer = () => {
   return (
-    <footer className="mt-20 border-t border-brand-ivory/10 bg-brand-black/95">
+    <footer className="mt-20 border-t border-brand-ivory/10 bg-brand-black/95 font-sans">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-14 sm:px-8 lg:grid-cols-4 lg:px-10">
         <div>
-          <h3 className="font-display text-2xl text-brand-cream">Light Design Solutions</h3>
+          <h3 className="text-2xl text-brand-cream">Light Design Solutions</h3>
           <p className="mt-4 text-sm leading-relaxed text-brand-ivory/70">
-            We craft high-performance architectural luminaires with a focus on spatial emotion,
-            technical precision, and long-term reliability.
+            At Light Design Solutions (LDS), we build forward-thinking lighting solutions that make people’s lives safer, while making buildings, homes and cities smarter and more sustainable. We deliver an industry-leading portfolio of indoor and outdoor lighting, lighting controls and smart lighting systems.
           </p>
         </div>
 
@@ -54,9 +53,10 @@ const Footer = () => {
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Contact</h4>
           <ul className="mt-4 space-y-2 text-sm text-brand-ivory/70">
-            <li>Studio District, Level 12, Placeholder City</li>
-            <li>hello@lumenatelier.com</li>
-            <li>+00 0000 000 000</li>
+            <li>Mumbai Office: A-007, Kanakia Boomerang, Chandivali, Mumbai, Maharashtra, 400072,India, +91-8849197195</li>
+            <li>Gurgaon Office: C-204, Suncity Avenue, Sector-102, Gurgaon, Haryana, 122001, +91-7906405904</li>
+            <li>Ghaziabad Office: Sector A4, A75, Industrial Area, Trans Delhi Signature City, Ghaziabad, Uttar Pradesh, 201102,India, +91-9717112702</li>
+            <li>Agra Office: 802, Gali Gopal Ji, Agra, Uttar Pradesh, 283104, India, +91-8849197195</li>
           </ul>
           <div className="mt-4 flex gap-3 text-sm text-brand-ivory/80">
             <a href="#" aria-label="LinkedIn" className="transition hover:text-brand-gold">
