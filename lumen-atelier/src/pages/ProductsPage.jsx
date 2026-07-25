@@ -52,7 +52,7 @@ const ProductsPage = () => {
       <section className="mx-auto w-full max-w-5xl px-4 pb-20 pt-32 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="text-center">
-            <h1 className="text-3xl font-semibold uppercase tracking-[0.06em] text-brand-cream sm:text-4xl">
+            <h1 className="font-display text-3xl leading-tight text-brand-cream sm:text-4xl lg:text-5xl">
               Our Products &amp; Solutions
             </h1>
             <p className="mx-auto mt-3 max-w-3xl text-sm text-brand-ivory/75 sm:text-base">

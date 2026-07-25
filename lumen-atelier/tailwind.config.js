@@ -14,7 +14,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Cormorant Garamond", "serif"],
+        display: ["Manrope", "Segoe UI", "sans-serif"],
         sans: ["Manrope", "Segoe UI", "sans-serif"],
       },
       boxShadow: {

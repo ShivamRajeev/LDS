@@ -28,8 +28,12 @@ const ContactPage = () => {
           <AnimatedSection delay={0.15}>
             <aside className="space-y-6 rounded-2xl border border-brand-ivory/10 bg-brand-charcoal/70 p-6">
               <div>
-                <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Office Address</h2>
-                <p className="mt-2 text-brand-ivory/75">Level 12, Studio District, Placeholder City, Country</p>
+                <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Office Addresses</h2>
+                <ul className="mt-2 space-y-2 text-brand-ivory/75">
+                  <li>Head Office: Level 12, Studio District, Andheri East, Mumbai, Maharashtra 400069</li>
+                  <li>North Office: 2nd Floor, Connaught Plaza, Connaught Place, New Delhi, Delhi 110001</li>
+                  <li>South Office: 5th Floor, MG Arcade, MG Road, Bengaluru, Karnataka 560001</li>
+                </ul>
               </div>
               <div>
                 <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Email</h2>
